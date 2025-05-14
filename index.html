@@ -234,9 +234,109 @@
             color: #333;
         }
         
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 200;
+        }
+        
+        .language-btn {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* Hide content based on language */
+        .fr {
+            display: none;
+        }
+        
+        html[lang="fr"] .en {
+            display: none;
+        }
+        
+        html[lang="fr"] .fr {
+            display: block;
+        }
+        
+        /* For elements with display:flex or inline elements */
+        .fr-inline {
+            display: none;
+        }
+        
+        html[lang="fr"] .en-inline {
+            display: none;
+        }
+        
+        html[lang="fr"] .fr-inline {
+            display: inline-block;
+        }
+        
+        /* Menu burger pour mobile */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        /* Responsive styles */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            
+            section h1, section h2 {
+                position: relative;
+                z-index: 5;
+            }
+            
+            /* Amélioration du menu pour mobile */
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(248, 248, 248, 0.98);
+                z-index: 999;
+                align-items: center;
+                justify-content: center;
             }
             
             nav ul {
@@ -245,326 +345,323 @@
             }
             
             nav ul li {
-                margin: 10px 0;
+                margin: 15px 0;
+            }
+            
+            nav ul li a {
+                font-size: 18px;
+            }
+            
+            /* Ajustement du hero pour éviter superposition */
+            .hero {
+                padding: 200px 0 80px;
+            }
+            
+            /* Ajustement du language switcher */
+            .language-switcher {
+                top: 20px;
+                right: 80px;
+                z-index: 1001;
+            }
+            
+            .language-btn {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+            
+            /* Réduire l'espacement pour mobile */
+            section {
+                padding: 60px 0;
+            }
+            
+            .content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* Ajustement des padding pour éviter les superpositions */
+            #about, #approach, #systems, #contact {
+                padding-top: 80px;
+                margin-top: -40px;
             }
         }
-    /* Language Switcher Styles */
-    .language-switcher {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        z-index: 200;
-    }
-    
-    .language-btn {
-        background-color: transparent;
-        color: #333;
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 5px 15px;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-    }
-    
-    .language-btn:hover {
-        background-color: #333;
-        color: #fff;
-    }
-    
-    /* Hide content based on language */
-    .fr {
-        display: none;
-    }
-    
-    html[lang="fr"] .en {
-        display: none;
-    }
-    
-    html[lang="fr"] .fr {
-        display: block;
-    }
-    
-    /* For elements with display:flex or inline elements */
-    .fr-inline {
-        display: none;
-    }
-    
-    html[lang="fr"] .en-inline {
-        display: none;
-    }
-    
-    html[lang="fr"] .fr-inline {
-        display: inline-block;
-    }
-    
-    /* Make the language switcher responsive */
-    @media (max-width: 768px) {
-        .language-switcher {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-        }
-        
-        .language-btn {
-            padding: 4px 10px;
-            font-size: 0.7rem;
-        }
-    }
     </style>
 </head>
-<div class="language-switcher">
-    <button id="language-toggle" class="language-btn">
-        <span class="en-inline">FR</span>
-        <span class="fr-inline">EN</span>
-    </button>
-</div>
 <body>
+    <!-- Bouton du menu mobile -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+    
+    <div class="language-switcher">
+        <button id="language-toggle" class="language-btn">
+            <span class="en-inline">FR</span>
+            <span class="fr-inline">EN</span>
+        </button>
+    </div>
+    
     <header>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#home">
-                    <span class="en-inline">Home</span>
-                    <span class="fr-inline">Accueil</span>
-                </a></li>
-                <li><a href="#about">
-                    <span class="en-inline">About Me</span>
-                    <span class="fr-inline">À Propos</span>
-                </a></li>
-                <li><a href="#approach">
-                    <span class="en-inline">My Approach</span>
-                    <span class="fr-inline">Mon Approche</span>
-                </a></li>
-                <li><a href="#systems">
-                    <span class="en-inline">Systems Psychodynamics</span>
-                    <span class="fr-inline">Psychodynamique des Systèmes</span>
-                </a></li>
-                <li><a href="#contact">
-                    <span class="en-inline">Contact Me</span>
-                    <span class="fr-inline">Me Contacter</span>
-                </a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <div class="container">
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">
+                        <span class="en-inline">Home</span>
+                        <span class="fr-inline">Accueil</span>
+                    </a></li>
+                    <li><a href="#about">
+                        <span class="en-inline">About Me</span>
+                        <span class="fr-inline">À Propos</span>
+                    </a></li>
+                    <li><a href="#approach">
+                        <span class="en-inline">My Approach</span>
+                        <span class="fr-inline">Mon Approche</span>
+                    </a></li>
+                    <li><a href="#systems">
+                        <span class="en-inline">Systems Psychodynamics</span>
+                        <span class="fr-inline">Psychodynamique des Systèmes</span>
+                    </a></li>
+                    <li><a href="#contact">
+                        <span class="en-inline">Contact Me</span>
+                        <span class="fr-inline">Me Contacter</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-    <div class="container">
-        <h1>
-            <span class="en">Global Leadership & Coaching</span>
-            <span class="fr">Leadership Global & Coaching</span>
-        </h1>
-        <p>
-            <span class="en">Building bridges across cultures and helping leaders navigate complexity with presence and integrity.</span>
-            <span class="fr">Construire des ponts entre les cultures et aider les leaders à naviguer dans la complexité avec présence et intégrité.</span>
-        </p>
-        <a href="#about" class="btn">
-            <span class="en-inline">Learn More</span>
-            <span class="fr-inline">En Savoir Plus</span>
-        </a>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>
+                <span class="en">Global Leadership & Coaching</span>
+                <span class="fr">Leadership Global & Coaching</span>
+            </h1>
+            <p>
+                <span class="en">Building bridges across cultures and helping leaders navigate complexity with presence and integrity.</span>
+                <span class="fr">Construire des ponts entre les cultures et aider les leaders à naviguer dans la complexité avec présence et intégrité.</span>
+            </p>
+            <a href="#about" class="btn">
+                <span class="en-inline">Learn More</span>
+                <span class="fr-inline">En Savoir Plus</span>
+            </a>
+        </div>
+    </section>
 
-<!-- ABOUT SECTION -->
-<section id="about">
-    <div class="container">
-        <div class="section-title">
-            <h2>
-                <span class="en">About Me</span>
-                <span class="fr">À Propos de Moi</span>
-            </h2>
-        </div>
-        <div class="profile-photo">
-            <img src= IMG_4099.JPEG alt="Professional portrait of a leadership coach">
-        </div>
-        <div class="content">
-            <p>
-                <span class="en">With a decade of leadership experience across Asia, Europe, and Latin America, I specialize in managing teams, developing businesses, and building bridges across cultures.</span>
-                <span class="fr">Avec une décennie d'expérience en leadership à travers l'Asie, l'Europe et l'Amérique Latine, je me spécialise dans la gestion d'équipes, le développement d'entreprises et la construction de ponts entre les cultures.</span>
-            </p>
-            <p>
-                <span class="en">Today, I lead commercial and administrative operations in China while training as an executive coach at the Tavistock Institute of Human Relations.</span>
-                <span class="fr">Aujourd'hui, je dirige des opérations commerciales et administratives en Chine tout en me formant comme coach exécutif à l'Institut Tavistock des Relations Humaines.</span>
-            </p>
-            <p>
-                <span class="en">Over the years, I've come to value not only performance, but presence — the ability to stay grounded, relate meaningfully to others, and lead with integrity in moments of uncertainty or transition. I am drawn to coaching because of a deep interest in what drives people — not just their actions, but their inner worlds, their contradictions, and the unspoken tensions that shape how they lead.</span>
-                <span class="fr">Au fil des années, j'ai appris à valoriser non seulement la performance, mais aussi la présence — la capacité à rester ancré, à établir des relations significatives avec les autres et à diriger avec intégrité dans les moments d'incertitude ou de transition. Je suis attiré par le coaching en raison d'un intérêt profond pour ce qui motive les gens — pas seulement leurs actions, mais leurs mondes intérieurs, leurs contradictions et les tensions non exprimées qui façonnent leur leadership.</span>
-            </p>
-            <p>
-                <span class="en">I work particularly well with professionals at a turning point — new leaders, mid-career managers stepping into more complex roles, or entrepreneurs facing strategic dilemmas. My clients often seek more than techniques: they want a space to pause, make sense of what's unfolding around them, and reconnect with what matters most — in themselves, and in their work.</span>
-                <span class="fr">Je travaille particulièrement bien avec les professionnels à un tournant — nouveaux leaders, managers en milieu de carrière assumant des rôles plus complexes, ou entrepreneurs confrontés à des dilemmes stratégiques. Mes clients cherchent souvent plus que des techniques : ils veulent un espace pour faire une pause, donner un sens à ce qui se déroule autour d'eux, et se reconnecter avec ce qui compte le plus — en eux-mêmes et dans leur travail.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- APPROACH SECTION -->
-<section id="approach">
-    <div class="container">
-        <div class="section-title">
-            <h2>
-                <span class="en">My Approach</span>
-                <span class="fr">Mon Approche</span>
-            </h2>
-        </div>
-        <div class="content">
-            <p>
-                <span class="en">Grounded in the systemic-psychodynamic tradition of the Tavistock Institute, my coaching provides a space for deep reflection and strategic thinking. Rather than offering ready-made solutions, I help clients explore both the visible and invisible forces shaping their leadership — enabling them to navigate uncertainty, clarify their role, and act with greater purpose and effectiveness.</span>
-                <span class="fr">Ancrée dans la tradition systémique-psychodynamique de l'Institut Tavistock, mon coaching offre un espace de réflexion profonde et de pensée stratégique. Plutôt que de proposer des solutions toutes faites, j'aide les clients à explorer les forces visibles et invisibles qui façonnent leur leadership — leur permettant de naviguer dans l'incertitude, de clarifier leur rôle et d'agir avec plus de sens et d'efficacité.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- SYSTEMS SECTION -->
-<section id="systems">
-    <div class="container">
-        <div class="section-title">
-            <h2>
-                <span class="en">Disciplines behind Systems Psychodynamics</span>
-                <span class="fr">Disciplines de la Psychodynamique des Systèmes</span>
-            </h2>
-        </div>
-        <div class="content">
-            <div class="content systems-content">
-                <p class="intro-text">
-                    <span class="en">System Psychodynamics is grounded in three core disciplines. Each contributes a unique lens to understand the emotional life of individuals, groups, and organizations:</span>
-                    <span class="fr">La Psychodynamique des Systèmes est fondée sur trois disciplines principales. Chacune apporte une perspective unique pour comprendre la vie émotionnelle des individus, des groupes et des organisations :</span>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <span class="en">About Me</span>
+                    <span class="fr">À Propos de Moi</span>
+                </h2>
+            </div>
+            <div class="profile-photo">
+                <img src="IMG_4099.JPEG" alt="Professional portrait of a leadership coach">
+            </div>
+            <div class="content">
+                <p>
+                    <span class="en">With a decade of leadership experience across Asia, Europe, and Latin America, I specialize in managing teams, developing businesses, and building bridges across cultures.</span>
+                    <span class="fr">Avec une décennie d'expérience en leadership à travers l'Asie, l'Europe et l'Amérique Latine, je me spécialise dans la gestion d'équipes, le développement d'entreprises et la construction de ponts entre les cultures.</span>
                 </p>
-                
-                <div class="discipline-card">
-                    <h3>
-                        <span class="en-inline">Psychoanalysis</span>
-                        <span class="fr-inline">Psychanalyse</span>
-                    </h3>
-                    <p>
-                        <span class="en">This discipline explores how unconscious processes — such as defense mechanisms, internalized relationships, and early emotional experiences — shape adult behavior. In organizational life, it helps us understand irrational reactions, unresolved anxieties, and patterns that repeat across time and context. It invites us to ask not just what is happening, but why, on a deeper emotional level.</span>
-                        <span class="fr">Cette discipline explore comment les processus inconscients — tels que les mécanismes de défense, les relations intériorisées et les expériences émotionnelles précoces — façonnent le comportement adulte. Dans la vie organisationnelle, elle nous aide à comprendre les réactions irrationnelles, les anxiétés non résolues et les schémas qui se répètent à travers le temps et le contexte. Elle nous invite à nous demander non seulement ce qui se passe, mais pourquoi, à un niveau émotionnel plus profond.</span>
+                <p>
+                    <span class="en">Today, I lead commercial and administrative operations in China while training as an executive coach at the Tavistock Institute of Human Relations.</span>
+                    <span class="fr">Aujourd'hui, je dirige des opérations commerciales et administratives en Chine tout en me formant comme coach exécutif à l'Institut Tavistock des Relations Humaines.</span>
+                </p>
+                <p>
+                    <span class="en">Over the years, I've come to value not only performance, but presence — the ability to stay grounded, relate meaningfully to others, and lead with integrity in moments of uncertainty or transition. I am drawn to coaching because of a deep interest in what drives people — not just their actions, but their inner worlds, their contradictions, and the unspoken tensions that shape how they lead.</span>
+                    <span class="fr">Au fil des années, j'ai appris à valoriser non seulement la performance, mais aussi la présence — la capacité à rester ancré, à établir des relations significatives avec les autres et à diriger avec intégrité dans les moments d'incertitude ou de transition. Je suis attiré par le coaching en raison d'un intérêt profond pour ce qui motive les gens — pas seulement leurs actions, mais leurs mondes intérieurs, leurs contradictions et les tensions non exprimées qui façonnent leur leadership.</span>
+                </p>
+                <p>
+                    <span class="en">I work particularly well with professionals at a turning point — new leaders, mid-career managers stepping into more complex roles, or entrepreneurs facing strategic dilemmas. My clients often seek more than techniques: they want a space to pause, make sense of what's unfolding around them, and reconnect with what matters most — in themselves, and in their work.</span>
+                    <span class="fr">Je travaille particulièrement bien avec les professionnels à un tournant — nouveaux leaders, managers en milieu de carrière assumant des rôles plus complexes, ou entrepreneurs confrontés à des dilemmes stratégiques. Mes clients cherchent souvent plus que des techniques : ils veulent un espace pour faire une pause, donner un sens à ce qui se déroule autour d'eux, et se reconnecter avec ce qui compte le plus — en eux-mêmes et dans leur travail.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPROACH SECTION -->
+    <section id="approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <span class="en">My Approach</span>
+                    <span class="fr">Mon Approche</span>
+                </h2>
+            </div>
+            <div class="content">
+                <p>
+                    <span class="en">Grounded in the systemic-psychodynamic tradition of the Tavistock Institute, my coaching provides a space for deep reflection and strategic thinking. Rather than offering ready-made solutions, I help clients explore both the visible and invisible forces shaping their leadership — enabling them to navigate uncertainty, clarify their role, and act with greater purpose and effectiveness.</span>
+                    <span class="fr">Ancrée dans la tradition systémique-psychodynamique de l'Institut Tavistock, mon coaching offre un espace de réflexion profonde et de pensée stratégique. Plutôt que de proposer des solutions toutes faites, j'aide les clients à explorer les forces visibles et invisibles qui façonnent leur leadership — leur permettant de naviguer dans l'incertitude, de clarifier leur rôle et d'agir avec plus de sens et d'efficacité.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEMS SECTION -->
+    <section id="systems">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <span class="en">Disciplines behind Systems Psychodynamics</span>
+                    <span class="fr">Disciplines de la Psychodynamique des Systèmes</span>
+                </h2>
+            </div>
+            <div class="content">
+                <div class="content systems-content">
+                    <p class="intro-text">
+                        <span class="en">System Psychodynamics is grounded in three core disciplines. Each contributes a unique lens to understand the emotional life of individuals, groups, and organizations:</span>
+                        <span class="fr">La Psychodynamique des Systèmes est fondée sur trois disciplines principales. Chacune apporte une perspective unique pour comprendre la vie émotionnelle des individus, des groupes et des organisations :</span>
                     </p>
-                </div>
-                
-                <div class="discipline-card">
-                    <h3>
-                        <span class="en-inline">Group Dynamics / Group Relations</span>
-                        <span class="fr-inline">Dynamiques de Groupe / Relations de Groupe</span>
-                    </h3>
-                    <p>
-                        <span class="en">Rooted in the work of Wilfred Bion and further developed at the Tavistock Institute, this field examines how people unconsciously take up roles in groups. When anxiety rises, groups may unconsciously fall into patterns like dependency, avoidance, or scapegoating. This discipline sheds light on leadership dynamics, power struggles, and the unspoken rules that shape group behavior.</span>
-                        <span class="fr">Enraciné dans les travaux de Wilfred Bion et développé à l'Institut Tavistock, ce domaine examine comment les personnes adoptent inconsciemment des rôles dans les groupes. Lorsque l'anxiété augmente, les groupes peuvent inconsciemment tomber dans des schémas comme la dépendance, l'évitement ou la recherche de boucs émissaires. Cette discipline éclaire les dynamiques de leadership, les luttes de pouvoir et les règles implicites qui façonnent le comportement du groupe.</span>
-                    </p>
-                </div>
-                
-                <div class="discipline-card">
-                    <h3>
-                        <span class="en-inline">Systems Theory</span>
-                        <span class="fr-inline">Théorie des Systèmes</span>
-                    </h3>
-                    <p>
-                        <span class="en">Systems theory views organizations as open, living systems — interconnected, adaptive, and influenced by both internal dynamics and external environments. It helps us see patterns rather than isolated events, and to think in terms of roles, boundaries, and authority structures. When combined with psychodynamic thinking, it offers a powerful framework for making sense of complex organizational realities.</span>
-                        <span class="fr">La théorie des systèmes considère les organisations comme des systèmes vivants ouverts — interconnectés, adaptatifs et influencés à la fois par des dynamiques internes et des environnements externes. Elle nous aide à voir des modèles plutôt que des événements isolés, et à penser en termes de rôles, de frontières et de structures d'autorité. Combinée à la pensée psychodynamique, elle offre un cadre puissant pour comprendre des réalités organisationnelles complexes.</span>
-                    </p>
+                    
+                    <div class="discipline-card">
+                        <h3>
+                            <span class="en-inline">Psychoanalysis</span>
+                            <span class="fr-inline">Psychanalyse</span>
+                        </h3>
+                        <p>
+                            <span class="en">This discipline explores how unconscious processes — such as defense mechanisms, internalized relationships, and early emotional experiences — shape adult behavior. In organizational life, it helps us understand irrational reactions, unresolved anxieties, and patterns that repeat across time and context. It invites us to ask not just what is happening, but why, on a deeper emotional level.</span>
+                            <span class="fr">Cette discipline explore comment les processus inconscients — tels que les mécanismes de défense, les relations intériorisées et les expériences émotionnelles précoces — façonnent le comportement adulte. Dans la vie organisationnelle, elle nous aide à comprendre les réactions irrationnelles, les anxiétés non résolues et les schémas qui se répètent à travers le temps et le contexte. Elle nous invite à nous demander non seulement ce qui se passe, mais pourquoi, à un niveau émotionnel plus profond.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="discipline-card">
+                        <h3>
+                            <span class="en-inline">Group Dynamics / Group Relations</span>
+                            <span class="fr-inline">Dynamiques de Groupe / Relations de Groupe</span>
+                        </h3>
+                        <p>
+                            <span class="en">Rooted in the work of Wilfred Bion and further developed at the Tavistock Institute, this field examines how people unconsciously take up roles in groups. When anxiety rises, groups may unconsciously fall into patterns like dependency, avoidance, or scapegoating. This discipline sheds light on leadership dynamics, power struggles, and the unspoken rules that shape group behavior.</span>
+                            <span class="fr">Enraciné dans les travaux de Wilfred Bion et développé à l'Institut Tavistock, ce domaine examine comment les personnes adoptent inconsciemment des rôles dans les groupes. Lorsque l'anxiété augmente, les groupes peuvent inconsciemment tomber dans des schémas comme la dépendance, l'évitement ou la recherche de boucs émissaires. Cette discipline éclaire les dynamiques de leadership, les luttes de pouvoir et les règles implicites qui façonnent le comportement du groupe.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="discipline-card">
+                        <h3>
+                            <span class="en-inline">Systems Theory</span>
+                            <span class="fr-inline">Théorie des Systèmes</span>
+                        </h3>
+                        <p>
+                            <span class="en">Systems theory views organizations as open, living systems — interconnected, adaptive, and influenced by both internal dynamics and external environments. It helps us see patterns rather than isolated events, and to think in terms of roles, boundaries, and authority structures. When combined with psychodynamic thinking, it offers a powerful framework for making sense of complex organizational realities.</span>
+                            <span class="fr">La théorie des systèmes considère les organisations comme des systèmes vivants ouverts — interconnectés, adaptatifs et influencés à la fois par des dynamiques internes et des environnements externes. Elle nous aide à voir des modèles plutôt que des événements isolés, et à penser en termes de rôles, de frontières et de structures d'autorité. Combinée à la pensée psychodynamique, elle offre un cadre puissant pour comprendre des réalités organisationnelles complexes.</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2>
-                <span class="en">Contact Me</span>
-                <span class="fr">Me Contacter</span>
-            </h2>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <span class="en">Contact Me</span>
+                    <span class="fr">Me Contacter</span>
+                </h2>
+            </div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mjkwjbga" method="POST">
+                    <div class="form-group">
+                        <label for="name">
+                            <span class="en-inline">Name</span>
+                            <span class="fr-inline">Nom</span>
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <span class="en-inline">Email</span>
+                            <span class="fr-inline">Courriel</span>
+                        </label>
+                        <input type="email" id="email" name="_replyto" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            <span class="en-inline">Message</span>
+                            <span class="fr-inline">Message</span>
+                        </label>
+                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                    </div>
+                    <!-- Protection anti-spam honeypot -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <!-- Page de remerciement après soumission -->
+                    <input type="hidden" name="_next" value="https://www.josephcohen.fr/merci.html">
+                    
+                    <!-- Sujet de l'email -->
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le site josephcohen.fr">
+                    
+                    <button type="submit" class="btn">
+                        <span class="en-inline">Send Message</span>
+                        <span class="fr-inline">Envoyer Message</span>
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="contact-form">
-    <form action="https://formspree.io/f/mjkwjbga" method="POST">
-        <div class="form-group">
-            <label for="name">
-                <span class="en-inline">Name</span>
-                <span class="fr-inline">Nom</span>
-            </label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">
-                <span class="en-inline">Email</span>
-                <span class="fr-inline">Courriel</span>
-            </label>
-            <input type="email" id="email" name="_replyto" placeholder="Your email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">
-                <span class="en-inline">Message</span>
-                <span class="fr-inline">Message</span>
-            </label>
-            <textarea id="message" name="message" placeholder="Your message" required></textarea>
-        </div>
-        <!-- Protection anti-spam honeypot -->
-        <input type="text" name="_gotcha" style="display:none">
-        
-        <!-- Page de remerciement après soumission -->
-        <input type="hidden" name="_next" value="https://www.josephcohen.fr/merci.html">
-        
-        <!-- Sujet de l'email -->
-        <input type="hidden" name="_subject" value="Nouveau message depuis le site josephcohen.fr">
-        
-        <button type="submit" class="btn">
-            <span class="en-inline">Send Message</span>
-            <span class="fr-inline">Envoyer Message</span>
-        </button>
-    </form>
-</div>
-    </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="social-icons">
-            <a href="#" aria-label="LinkedIn">📑</a>
-            <a href="#" aria-label="Twitter">🐦</a>
-            <a href="#" aria-label="Email">✉️</a>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn">📑</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Email">✉️</a>
+            </div>
+            <p>
+                <span class="en">&copy; 2025 All Rights Reserved.</span>
+                <span class="fr">&copy; 2025 Tous Droits Réservés.</span>
+            </p>
         </div>
-        <p>
-            <span class="en">&copy; 2025 All Rights Reserved.</span>
-            <span class="fr">&copy; 2025 Tous Droits Réservés.</span>
-        </p>
-    </div>
-</footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set initial language
-        const html = document.documentElement;
-        html.setAttribute('lang', 'en');
-        
-        // Get the language toggle button
-        const languageToggle = document.getElementById('language-toggle');
-        
-        // Add click event listener
-        languageToggle.addEventListener('click', function() {
-            const currentLang = html.getAttribute('lang');
-            const newLang = currentLang === 'en' ? 'fr' : 'en';
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language
+            const html = document.documentElement;
+            html.setAttribute('lang', 'en');
             
-            // Switch the language
-            html.setAttribute('lang', newLang);
+            // Get the language toggle button
+            const languageToggle = document.getElementById('language-toggle');
             
-            // Save the language preference
-            localStorage.setItem('preferredLanguage', newLang);
+            // Add click event listener
+            languageToggle.addEventListener('click', function() {
+                const currentLang = html.getAttribute('lang');
+                const newLang = currentLang === 'en' ? 'fr' : 'en';
+                
+                // Switch the language
+                html.setAttribute('lang', newLang);
+                
+                // Save the language preference
+                localStorage.setItem('preferredLanguage', newLang);
+            });
+            
+            // Check if there's a saved language preference
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                html.setAttribute('lang', savedLanguage);
+            }
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                menuToggle.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Close menu when clicking on links
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                });
+            });
         });
-        
-        // Check if there's a saved language preference
-        const savedLanguage = localStorage.getItem('preferredLanguage');
-        if (savedLanguage) {
-            html.setAttribute('lang', savedLanguage);
-        }
-    });
-</script></body>
+    </script>
+</body>
 </html>
