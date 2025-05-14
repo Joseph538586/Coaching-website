@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci | Leadership & Coaching</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #333;
+            color: #fff;
+            border: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #555;
+        }
+        
+        /* Language Switcher Styles */
+        .fr {
+            display: none;
+        }
+        
+        html[lang="fr"] .en {
+            display: none;
+        }
+        
+        html[lang="fr"] .fr {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="en">Thank You!</span>
+            <span class="fr">Merci !</span>
+        </h1>
+        <p>
+            <span class="en">Your message has been sent successfully. I will get back to you as soon as possible.</span>
+            <span class="fr">Votre message a été envoyé avec succès. Je vous répondrai dès que possible.</span>
+        </p>
+        <a href="index.html" class="btn">
+            <span class="en">Return to Homepage</span>
+            <span class="fr">Retour à la page d'accueil</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a saved language preference
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                document.documentElement.setAttribute('lang', savedLanguage);
+            } else {
+                document.documentElement.setAttribute('lang', 'en');
+            }
+        });
+    </script>
+</body>
+</html>
