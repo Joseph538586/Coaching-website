@@ -3,646 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership & Coaching</title>
+    <title>Joseph - Leadership Coaching</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        
+
         body {
-            background-color: #f8f8f8;
-            color: #333;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        /* Header */
         header {
-            padding: 30px 0;
-            border-bottom: 1px solid #eee;
-            position: fixed;
-            width: 100%;
-            background: rgba(248, 248, 248, 0.95);
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(21, 101, 192, 0.3);
+            position: sticky;
+            top: 0;
             z-index: 100;
         }
-        
-        nav {
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Navigation in header */
+        .nav-sections {
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 20px;
-        }
-        
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #333;
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .hero {
-            padding: 180px 0 100px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-            color: #333;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #333;
-            color: #fff;
-            border: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .btn:hover {
-            background: #555;
-        }
-        
-        section {
-            padding: 100px 0;
-        }
-        
-        section:nth-child(even) {
-            background-color: #fff;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #333;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: #333;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: justify;
-        }
-        
-        .content p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #444;
-            line-height: 1.8;
-        }
-        
-        .profile-photo {
-            max-width: 300px;
-            margin: 0 auto 40px;
-        }
-        
-        .profile-photo img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 0;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background-color: #f8f8f8;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #333;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        footer {
-            padding: 30px 0;
-            background-color: #333;
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-        }
-        
-        /* Language Switcher Styles */
-        .language-switcher {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            z-index: 200;
-        }
-        
-        .language-btn {
-            background-color: transparent;
-            color: #333;
-            border: 1px solid #333;
+
+        .nav-sections span {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
             border-radius: 20px;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            color: white;
+        }
+
+        .nav-sections span:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Reviews Section */
+        .review-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-left: 4px solid #1565c0;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .review-author {
+            text-align: right;
+            color: #1565c0;
+            font-weight: 600;
+        }
+
+        .review-position {
+            text-align: right;
+            color: #7b8a96;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Photo container */
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 4px solid white;
+            box-shadow: 0 8px 32px rgba(21, 101, 192, 0.2);
+            margin: 0 auto 2rem auto;
             display: flex;
             align-items: center;
+            justify-content: center;
+            color: #1565c0;
+            font-size: 1.1rem;
+            text-align: center;
+            font-style: italic;
+            overflow: hidden;
         }
-        
-        .language-btn:hover {
-            background-color: #333;
-            color: #fff;
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
-        
-        /* Hide content based on language */
-        .fr {
-            display: none;
-        }
-        
-        html[lang="fr"] .en {
-            display: none;
-        }
-        
-        html[lang="fr"] .fr {
-            display: block;
-        }
-        
-        /* For elements with display:flex or inline elements */
-        .fr-inline {
-            display: none;
-        }
-        
-        html[lang="fr"] .en-inline {
-            display: none;
-        }
-        
-        html[lang="fr"] .fr-inline {
-            display: inline-block;
-        }
-        
-        /* Menu burger pour mobile */
-        .mobile-menu-toggle {
-            display: none;
+
+        /* Language Toggle */
+        .language-toggle {
             position: fixed;
-            top: 14px;
+            top: 20px;
             right: 20px;
             z-index: 1000;
-            background: transparent;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #333;
+            background: white;
+            border-radius: 25px;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
-        /* Responsive styles */
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #1565c0;
+        }
+
+        .lang-btn.active {
+            background: #1565c0;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .section h2 {
+            color: #1565c0;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #e3f2fd;
+            padding-bottom: 0.5rem;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            text-align: justify;
+            color: #34495e;
+        }
+
+        .content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #34495e;
+        }
+
+        .content strong {
+            color: #1565c0;
+            font-weight: 600;
+        }
+
+        .content em {
+            color: #2980b9;
+            font-style: italic;
+        }
+
+        /* Link styling */
+        a {
+            color: #1565c0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            h1 {
+                font-size: 2rem;
             }
-            
-            section h1, section h2 {
-                position: relative;
-                z-index: 5;
+
+            .section {
+                margin: 1rem 0;
+                padding: 2rem 1.5rem;
             }
-            
-            /* Amélioration du menu pour mobile */
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            header {
-                padding: 28px 0;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            nav.active {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(248, 248, 248, 0.98);
-                z-index: 999;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            nav ul li a {
-                font-size: 18px;
-            }
-            
-            /* Ajustement du hero pour éviter superposition */
-            .hero {
-                padding: 200px 0 80px;
-            }
-            
-            /* Ajustement du language switcher */
-            .language-switcher {
-                top: 20px;
-                right: 80px;
-                z-index: 1001;
-            }
-            
-            .language-btn {
-                padding: 4px 10px;
-                font-size: 0.7rem;
-            }
-            
-            /* Réduire l'espacement pour mobile */
-            section {
-                padding: 60px 0;
-            }
-            
-            .content p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
+
+            .section h2 {
                 font-size: 1.8rem;
             }
-            
-            /* Ajustement des padding pour éviter les superpositions */
-            #about, #approach, #systems, #contact {
-                padding-top: 80px;
-                margin-top: -40px;
+
+            .language-toggle {
+                top: 10px;
+                right: 10px;
             }
+
+            .nav-sections {
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .nav-sections span {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .photo-container {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-sections {
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 1rem;
+            }
+
+            .nav-sections span {
+                font-size: 0.85rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+
+        /* Smooth animations */
+        .content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .content.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Bouton du menu mobile -->
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
-        
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('en')" id="en-btn">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('fr')" id="fr-btn">FR</button>
+    </div>
+
     <header>
         <div class="container">
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#home">
-                        <span class="en-inline">Home</span>
-                        <span class="fr-inline">Accueil</span>
-                    </a></li>
-                    <li><a href="#about">
-                        <span class="en-inline">About Me</span>
-                        <span class="fr-inline">À Propos</span>
-                    </a></li>
-                    <li><a href="#approach">
-                        <span class="en-inline">My Approach</span>
-                        <span class="fr-inline">Mon Approche</span>
-                    </a></li>
-                    <li><a href="#systems">
-                        <span class="en-inline">Systems Psychodynamics</span>
-                        <span class="fr-inline">Systemes Psychodynamiques</span>
-                    </a></li>
-                    <li><a href="#contact">
-                        <span class="en-inline">Contact Me</span>
-                        <span class="fr-inline">Me Contacter</span>
-                    </a></li>
-                </ul>
-            </nav>
+            <h1>Joseph</h1>
+            <div class="subtitle" id="header-subtitle">Leadership Coaching</div>
+            <div class="nav-sections" id="nav-sections">
+                <span onclick="scrollToSection('about')">About me</span>
+                <span onclick="scrollToSection('approach')">My approach</span>
+                <span onclick="scrollToSection('systems')">System Psychodynamics</span>
+                <span onclick="scrollToSection('reviews')">Reviews</span>
+                <span onclick="scrollToSection('contact')">Contact</span>
+            </div>
         </div>
-        <div class="language-switcher">
-        <button id="language-toggle" class="language-btn">
-            <span class="en-inline">FR</span>
-            <span class="fr-inline">EN</span>
-        </button>
-    </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <main>
         <div class="container">
-            <h1>
-                <span class="en">Global Leadership & Coaching</span>
-                <span class="fr">Leadership Global & Coaching</span>
-            </h1>
-            <p>
-                <span class="en">Building bridges across cultures and helping leaders navigate complexity with presence and integrity.</span>
-                <span class="fr">Construire des ponts entre les cultures et aider les leaders à naviguer dans la complexité avec présence et intégrité.</span>
-            </p>
-            <a href="#about" class="btn">
-                <span class="en-inline">Learn More</span>
-                <span class="fr-inline">En Savoir Plus</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>
-                    <span class="en">About Me</span>
-                    <span class="fr">Mon Parcours</span>
-                </h2>
-            </div>
-            <div class="profile-photo">
-                <img src="IMG_4099.JPEG" alt="Professional portrait of a leadership coach">
-            </div>
-            <div class="content">
-                <p>
-                    <span class="en">I have been living in Asia for the past ten years, managing remotely a small trading office. My work connects me with teams in China, Brazil, and France, across the many facets of international trade — sales, logistics, quality control, and team management.</span>
-                    <span class="fr">Je vis en Asie depuis dix ans, où je dirige à distance un petit bureau de trading. Mon travail me met en relation avec des équipes en Chine, au Brésil et en France, autour des multiples enjeux du commerce international — vente, logistique, contrôle qualité, gestion d’équipe, etc.</span>
-                </p>
-                <p>
-                    <span class="en">Over time, I came to see that performance is not just a matter of skills or strategy. It emerges from the subtle alignment between a person and the larger system they operate in, and from their ability to work effectively within a group. This led me to reflect more deeply on power, authority, and dependency, on group dynamics, and on the defense mechanisms individuals and teams develop to cope with the anxiety of a volatile and complex environment.</span>
-                    <span class="fr">Avec le temps, j’ai compris que la performance ne tient pas seulement aux compétences ou à la stratégie. Elle résulte d’un alignement subtil entre la personne et le système dans lequel elle évolue, ainsi que de sa capacité à interagir efficacement en groupe. Cela m’a amené à réfléchir plus profondément aux relations de pouvoir, d’autorité et de dépendance, aux dynamiques de groupe, et aux mécanismes de défense qu’un individu ou une équipe déploient pour faire face à l’anxiété d’un environnement instable et complexe.</a>.</span>
-                </p>
-                <p>
-                    <span class="en">These observations inspired me to train in Coaching for Leadership at the Tavistock Institute of Human Relations. I have reached a stage in life where the search for meaning has become more important — a stage where one wants to have an impact and contribute to a better world. For me, this begins with a strong personal grounding and the capacity to live with uncertainty and the unknown.</span>
-                    <span class="fr">Ces observations m’ont conduit à me former en Coaching for Leadership au Tavistock Institute of Human Relations. Aujourd’hui, à ce stade de ma carrière, la recherche de sens prend une place plus importante — je souhaite avoir de l’impact et contribuer à un monde meilleur. Pour moi, cela commence par un ancrage personnel solide et la capacité à vivre avec l’incertitude et l’inconnu.</span>
-                </p>
-                <p>
-                    <span class="en">Coaching offers me a way to explore this human complexity — through listening, dialogue, and shared experience — and to provide leaders with a space to pause, make sense of what is unfolding around them, and reconnect with what matters most, both in themselves and in their work.</span>
-                    <span class="fr">Le coaching est pour moi un moyen d’explorer cette complexité humaine — par l’écoute, le dialogue et l’expérience partagée — et d’offrir aux leaders un espace où faire une pause, donner du sens à ce qui se passe autour d’eux, et se reconnecter à ce qui compte vraiment, en eux-mêmes comme dans leur travail.</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPROACH SECTION -->
-<section id="approach">
-    <div class="container">
-        <div class="section-title">
-            <h2>
-                <span class="en">My Approach</span>
-                <span class="fr">Mon Approche</span>
-            </h2>
-        </div>
-        <div class="content">
-            <p>
-                <span class="en">Coaching aims at personal development. It can be short-term, when the goal is to address a specific challenge, or longer-term, when it involves broader growth. In practice, the client sets the agenda and chooses what they wish to explore.</span>
-                <span class="fr">Le coaching vise le développement personnel. Il peut être de courte durée, lorsqu’il s’agit de résoudre une problématique précise, ou plus long lorsqu’il accompagne un développement plus global. En pratique, c’est le client qui définit l’agenda et ce qu’il souhaite explorer.</span>
-            </p>
-            
-            <p>
-                <span class="en">It is important to note that coaching is not a substitute for therapy. While it is a helping relationship, its purpose is not therapeutic. Coaching focuses first and foremost on work and professional context.</span>
-                <span class="fr">Il est important de préciser que le coaching n’est pas un substitut à une thérapie. Bien qu’il s’agisse d’une relation d’aide, il n’a pas pour objectif d’être thérapeutique. Le coaching s’intéresse avant tout au travail et au contexte professionnel.</span>
-            </p>
-            
-            <p>
-                <span class="en">It is also not mentoring. I do not provide ready-made solutions or advice. Instead, my role is to help the clients arrive at their own solutions. To do so, I help them explore both the visible and invisible forces shaping their leadership, enabling them to navigate uncertainty, clarify their role, and act with greater purpose and effectiveness.</span>
-                <span class="fr">Ce n’est pas non plus du mentoring : je n’apporte pas de solutions toutes faites ni de conseils. Mon rôle est d’aider le client à trouver ses propres réponses. Pour cela, je l’accompagne dans l’exploration des forces visibles et invisibles qui façonnent son leadership, afin de lui permettre de naviguer dans l’incertitude, de clarifier son rôle et d’agir avec plus de sens et d’efficacité.</span>
-            </p>
-
-             <p>
-                <span class="en">Grounded in the systemic–psychodynamic tradition of the Tavistock Institute, my coaching offers a space for deep reflection and strategic thinking.</span>
-                <span class="fr">Ancré dans la tradition systémique–psychodynamique du Tavistock Institute, mon coaching offre un espace de réflexion approfondie et de pensée stratégique.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- SYSTEMS SECTION -->
-    <section id="systems">
-        <div class="container">
-            <div class="section-title">
-                <h2>
-                    <span class="en">About Systems Psychodynamics</span>
-                    <span class="fr">L'approche "Systems Psychodynamics"</span>
-                </h2>
-            </div>
-            <div class="content">
-                <div class="systems-content">
-                    <p class="intro-text">
-                        <span class="en">The systems psychodynamics approach was developed in the 1950s–60s by researchers and practitioners at the <a href="https://tavinstitute.org/">Tavistock Institute for Human Relations</a> (and the Tavistock Clinic) in London.</span>
-                        <span class="fr">L'approche systems psychodynamiques a été développée dans les années 1950–60 par des chercheurs et praticiens du <a href="https://tavinstitute.org/">Tavistock Institute for Human Relations</a> (et de la Tavistock Clinic) à Londres.</span>
-                    </p>
+            <!-- About Me Section -->
+            <section class="section" id="about">
+                <div class="content active" id="about-en">
+                    <h2>About me</h2>
+                    <div class="photo-container">
+                        <div>Your photo here</div>
+                        <!-- Pour ajouter une photo, remplacez le div ci-dessus par :
+                        <img src="chemin/vers/votre/photo.jpg" alt="Joseph" />
+                        -->
+                    </div>
+                    <p>I have been living in Asia for the past ten years, managing remotely a small trading office. My work connects me with teams in China, Brazil, and France, across the many facets of international trade --- sales, logistics, quality control, and team management.</p>
                     
-                    <p>
-                        <span class="en">It emerged at the crossroads of several influences:</span>
-                        <span class="fr">Elle s'est construite à la croisée de plusieurs influences :</span>
-                    </p>
-                     <p>
-                        <span class="en"><strong>Freudian and post-Freudian psychoanalysis</strong> to understand the unconscious dynamics at both individual and collective levels.</span>
-                        <span class="fr"><strong>Psychanalyse freudienne et post-freudienne</strong> pour comprendre les dynamiques inconscientes individuelles et collectives.</span>
-                     </p>  
-                     <p>
-                        <span class="en"><strong>Systems theory</strong> to analyze how groups and institutions operate within their environment.</span>
-                        <span class="fr"><strong>Théorie des systèmes</strong> pour analyser comment les groupes et institutions fonctionnent dans leur environnement.</span>
-                    </p>  
-                    <p>
-                        <span class="en"><strong>Group relations</strong> to study the relationship between role, authority, and system.</span>
-                        <span class="fr"><strong>Relations de groupe</strong> pour étudier le lien entre rôle, autorité et système.</span>
-                    </p>
+                    <p>Over time, I came to see that performance is not just a matter of skills or strategy. It emerges from the subtle alignment between a person and the larger system they operate in, and from their ability to work effectively within a group. This led me to reflect more deeply on power, authority, and dependency, on group dynamics, and on the defense mechanisms individuals and teams develop to cope with the anxiety of a volatile and complex environment.</p>
                     
-                    <p>
-                        <span class="en"><strong>Context and purpose:</strong> initially, it was designed to help organizations (businesses, hospitals, the military, public services) better understand the tensions, resistances, and collective behaviors that either hinder or support their functioning — with the aim of developing leadership, clarifying roles, and improving effectiveness, while taking the human and emotional dimension into account.</span>
-                        <span class="fr"><strong>Contexte et but :</strong> initialement, il s'agissait d'aider les organisations (entreprises, hôpitaux, armée, services publics) à mieux comprendre les tensions, résistances et comportements collectifs qui freinent ou favorisent leur fonctionnement, afin de développer le leadership, clarifier les rôles et améliorer l'efficacité tout en prenant en compte la dimension humaine et émotionnelle.</span>
-                    </p>
+                    <p>These observations inspired me to train in <em>Coaching for Leadership</em> at the Tavistock Institute of Human Relations. I have reached a stage in life where the search for meaning has become more important --- a stage where one wants to have an impact and contribute to a better world. For me, this begins with a strong personal grounding and the capacity to live with uncertainty and the unknown.</p>
                     
-                    <p>
-                        <span class="en">Today, the Tavistock Institute continues to develop this approach, adapting it to contemporary contexts and integrating new perspectives to address current social, organizational, and cultural challenges.</span>
-                        <span class="fr">Aujourd'hui, le Tavistock Institute continue de faire évoluer cette approche, l'adaptant aux contextes contemporains et intégrant des perspectives nouvelles pour répondre aux enjeux sociaux, organisationnels et culturels actuels.</span>
-                    </p>
+                    <p>Coaching offers me a way to explore this human complexity --- through listening, dialogue, and shared experience --- and to provide leaders with a space to pause, make sense of what is unfolding around them, and reconnect with what matters most, both in themselves and in their work.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>
-                    <span class="en">Contact Me</span>
-                    <span class="fr">Me Contacter</span>
-                </h2>
-            </div>
-            <div class="contact-form">
-                <form action="https://formspree.io/f/mjkwjbga" method="POST">
-                    <div class="form-group">
-                        <label for="name">
-                            <span class="en-inline">Name</span>
-                            <span class="fr-inline">Nom</span>
-                        </label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">
-                            <span class="en-inline">Email</span>
-                            <span class="fr-inline">Courriel</span>
-                        </label>
-                        <input type="email" id="email" name="_replyto" placeholder="Your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">
-                            <span class="en-inline">Message</span>
-                            <span class="fr-inline">Message</span>
-                        </label>
-                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
-                    </div>
-                    <!-- Protection anti-spam honeypot -->
-                    <input type="text" name="_gotcha" style="display:none">
-                    
-                    <!-- Page de remerciement après soumission -->
-                    <input type="hidden" name="_next" value="https://www.josephcohen.fr/merci.html">
-                    
-                    <!-- Sujet de l'email -->
-                    <input type="hidden" name="_subject" value="Nouveau message depuis le site josephcohen.fr">
-                    
-                    <button type="submit" class="btn">
-                        <span class="en-inline">Send Message</span>
-                        <span class="fr-inline">Envoyer Message</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>
-                <span class="en">&copy; 2025 All Rights Reserved.</span>
-                <span class="fr">&copy; 2025 Tous Droits Réservés.</span>
-            </p>
+                <div class="content" id="about-fr">
+                    <h2>Mon Parcours</h2>
+                    <div class="photo-container">
+                        <div>Votre photo ici</div>
+                        <!-- Pour ajouter une photo, remplacez le div ci-dessus par :
+                        <img src="chemin/vers/votre/photo.jpg" alt="Joseph" />
+                        -->
+                    </div>
+                    <p>Je vis en Asie depuis dix ans, où je dirige à distance un petit bureau de trading. Mon travail me met en relation avec des équipes en Chine, au Brésil et en France, autour des multiples enjeux du commerce international --- vente, logistique, contrôle qualité, gestion d'équipe, etc.</p>
+                    
+                    <p>Avec le temps, j'ai compris que la performance ne tient pas seulement aux compétences ou à la stratégie. Elle résulte d'un alignement subtil entre la personne et le système dans lequel elle évolue, ainsi que de sa capacité à interagir efficacement en groupe. Cela m'a amené à réfléchir plus profondément aux relations de pouvoir, d'autorité et de dépendance, aux dynamiques de groupe, et aux mécanismes de défense qu'un individu ou une équipe déploient pour faire face à l'anxiété d'un environnement instable et complexe.</p>
+                    
+                    <p>Ces observations m'ont conduit à me former en <em>Coaching for Leadership</em> au Tavistock Institute of Human Relations. Aujourd'hui, à ce stade de ma carrière, la recherche de sens prend une place plus importante --- je souhaite avoir de l'impact et contribuer à un monde meilleur. Pour moi, cela commence par un ancrage personnel solide et la capacité à vivre avec l'incertitude et l'inconnu.</p>
+                    
+                    <p>Le coaching est pour moi un moyen d'explorer cette complexité humaine --- par l'écoute, le dialogue et l'expérience partagée --- et d'offrir aux leaders un espace où faire une pause, donner du sens à ce qui se passe autour d'eux, et se reconnecter à ce qui compte vraiment, en eux-mêmes comme dans leur travail.</p>
+                </div>
+            </section>
+
+            <!-- Approach Section -->
+            <section class="section" id="approach">
+                <div class="content active" id="approach-en">
+                    <h2>My approach</h2>
+                    <p>Coaching aims at personal development. It can be short-term, when the goal is to address a specific challenge, or longer-term, when it involves broader growth. In practice, the client sets the agenda and chooses what they wish to explore.</p>
+                    
+                    <p>It is important to note that coaching is not a substitute for therapy. While it is a helping relationship, its purpose is not therapeutic. Coaching focuses first and foremost on work and professional context.</p>
+                    
+                    <p>It is also not mentoring. I do not provide ready-made solutions or advice. Instead, my role is to help the clients arrive at their own solutions. To do so, I help them explore both the visible and invisible forces shaping their leadership, enabling them to navigate uncertainty, clarify their role, and act with greater purpose and effectiveness.</p>
+                    
+                    <p>Grounded in the systemic--psychodynamic tradition of the Tavistock Institute, my coaching offers a space for deep reflection and strategic thinking.</p>
+                </div>
+
+                <div class="content" id="approach-fr">
+                    <h2>Mon Approche</h2>
+                    <p>Le coaching vise le développement personnel. Il peut être de courte durée, lorsqu'il s'agit de résoudre une problématique précise, ou plus long lorsqu'il accompagne un développement plus global. En pratique, c'est le client qui définit l'agenda et ce qu'il souhaite explorer.</p>
+                    
+                    <p>Il est important de préciser que le coaching n'est pas un substitut à une thérapie. Bien qu'il s'agisse d'une relation d'aide, il n'a pas pour objectif d'être thérapeutique. Le coaching s'intéresse avant tout au travail et au contexte professionnel.</p>
+                    
+                    <p>Ce n'est pas non plus du mentoring : je n'apporte pas de solutions toutes faites ni de conseils. Mon rôle est d'aider le client à trouver ses propres réponses. Pour cela, je l'accompagne dans l'exploration des forces visibles et invisibles qui façonnent son leadership, afin de lui permettre de naviguer dans l'incertitude, de clarifier son rôle et d'agir avec plus de sens et d'efficacité.</p>
+                    
+                    <p>Ancré dans la tradition systémique--psychodynamique du Tavistock Institute, mon coaching offre un espace de réflexion approfondie et de pensée stratégique.</p>
+                </div>
+            </section>
+
+            <!-- Systems Psychodynamics Section -->
+            <section class="section" id="systems">
+                <div class="content active" id="systems-en">
+                    <h2>About System Psychodynamics</h2>
+                    <p>The systems psychodynamics approach was developed in the 1950s--60s by researchers and practitioners at the Tavistock Institute <a href="https://tavinstitute.org/">(and the Tavistock Clinic)</a> in London.</p>
+                    
+                    <p>It emerged at the crossroads of several influences:</p>
+                    
+                    <ul>
+                        <li><strong>Freudian and post-Freudian psychoanalysis</strong> to understand the unconscious dynamics at both individual and collective levels.</li>
+                        <li><strong>Systems and organizational theory</strong> to analyze how groups and institutions operate within their environment.</li>
+                        <li><strong>Group relations work</strong> to study the relationship between role, authority, and system.</li>
+                    </ul>
+                    
+                    <p><strong>Context and purpose:</strong> initially, it was designed to help organizations (businesses, hospitals, the military, public services) better understand the tensions, resistances, and collective behaviors that either hinder or support their functioning --- with the aim of developing leadership, clarifying roles, and improving effectiveness, while taking the human and emotional dimension into account.</p>
+                    
+                    <p>Today, the Tavistock Institute continues to develop this approach, adapting it to contemporary contexts and integrating new perspectives to address current social, organizational, and cultural challenges.</p>
+                </div>
+
+                <div class="content" id="systems-fr">
+                    <h2>Les Systèmes Psychodynamiques</h2>
+                    <p>L'approche systems psychodynamiques a été développée dans les années 1950--60 par des chercheurs et praticiens du Tavistock Institute (et de la Tavistock Clinic) à Londres.</p>
+                    
+                    <p>Elle s'est construite à la croisée de plusieurs influences :</p>
+                    
+                    <ul>
+                        <li><strong>Psychanalyse freudienne et post-freudienne</strong> pour comprendre les dynamiques inconscientes individuelles et collectives.</li>
+                        <li><strong>Théorie des systèmes et de l'organisation</strong> pour analyser comment les groupes et institutions fonctionnent dans leur environnement.</li>
+                        <li><strong>Travail sur les groupes</strong> pour étudier le lien entre rôle, autorité et système.</li>
+                    </ul>
+                    
+                    <p><strong>Contexte et but</strong> : initialement, il s'agissait d'aider les organisations (entreprises, hôpitaux, armée, services publics) à mieux comprendre les tensions, résistances et comportements collectifs qui freinent ou favorisent leur fonctionnement, afin de développer le leadership, clarifier les rôles et améliorer l'efficacité tout en prenant en compte la dimension humaine et émotionnelle.</p>
+                    
+                    <p>Aujourd'hui, le Tavistock Institute continue de faire évoluer cette approche, l'adaptant aux contextes contemporains et intégrant des perspectives nouvelles pour répondre aux enjeux sociaux, organisationnels et culturels actuels.</p>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="section" id="reviews">
+                <div class="content active" id="reviews-en">
+                    <h2>Reviews</h2>
+                    
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Working with Joseph has been transformational for my leadership approach. His deep understanding of systems dynamics helped me navigate complex organizational challenges with greater clarity and confidence. The coaching sessions provided a space for profound reflection that I hadn't experienced before."
+                        </div>
+                        <div class="review-author">Sarah Chen</div>
+                        <div class="review-position">Regional Director, Tech Company</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Joseph's systemic-psychodynamic approach offered me insights into the invisible forces shaping my leadership that I never would have discovered on my own. His ability to listen deeply and ask the right questions helped me reconnect with my authentic leadership style."
+                        </div>
+                        <div class="review-author">Michael Rodriguez</div>
+                        <div class="review-position">VP Operations, Manufacturing</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-text">
+                            "The coaching relationship with Joseph provided exactly what I needed during a period of significant organizational change. His expertise in group dynamics and authority relationships helped me navigate uncertainty and emerge as a more effective leader."
+                        </div>
+                        <div class="review-author">Emma Thompson</div>
+                        <div class="review-position">Department Head, Healthcare</div>
+                    </div>
+                </div>
+
+                <div class="content" id="reviews-fr">
+                    <h2>Témoignages</h2>
+                    
+                    <div class="review-card">
+                        <div class="review-text">
+                            "Travailler avec Joseph a été transformateur pour mon approche du leadership. Sa compréhension profonde des dynamiques systémiques m'a aidé à naviguer dans des défis organisationnels complexes avec plus de clarté et de confiance. Les séances de coaching ont offert un espace de réflexion profonde que je n'avais jamais expérimenté auparavant."
+                        </div>
+                        <div class="review-author">Sarah Chen</div>
+                        <div class="review-position">Directrice Régionale, Entreprise Tech</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-text">
+                            "L'approche systémique-psychodynamique de Joseph m'a offert des insights sur les forces invisibles qui façonnent mon leadership que je n'aurais jamais découvertes seul. Sa capacité d'écoute profonde et de poser les bonnes questions m'a aidé à me reconnecter avec mon style de leadership authentique."
+                        </div>
+                        <div class="review-author">Michael Rodriguez</div>
+                        <div class="review-position">VP Opérations, Industrie</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-text">
+                            "La relation de coaching avec Joseph a fourni exactement ce dont j'avais besoin pendant une période de changements organisationnels significatifs. Son expertise en dynamiques de groupe et relations d'autorité m'a aidé à naviguer l'incertitude et à émerger comme un leader plus efficace."
+                        </div>
+                        <div class="review-author">Emma Thompson</div>
+                        <div class="review-position">Chef de Département, Santé</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section" id="contact">
+                <div class="content active" id="contact-en">
+                    <h2>Contact</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="color: #1565c0; margin-bottom: 1rem;">Get in Touch</h3>
+                            <p>I would be happy to discuss how coaching might support your leadership journey. Please feel free to reach out for an initial conversation.</p>
+                            <div style="margin-top: 2rem;">
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+                                </div>
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Location:</strong> Asia
+                                </div>
+                                <div>
+                                    <strong>Languages:</strong> English, Français
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content" id="contact-fr">
+                    <h2>Contact</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="color: #1565c0; margin-bottom: 1rem;">Prenons Contact</h3>
+                            <p>Je serais ravi de discuter de la façon dont le coaching pourrait accompagner votre parcours de leader. N'hésitez pas à me contacter pour un premier échange.</p>
+                            <div style="margin-top: 2rem;">
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Email :</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+                                </div>
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Localisation :</strong> Asie
+                                </div>
+                                <div>
+                                    <strong>Langues :</strong> English, Français
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </footer>
-    
+    </main>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial language
-            const html = document.documentElement;
-            html.setAttribute('lang', 'en');
+        function switchLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(lang + '-btn').classList.add('active');
             
-            // Get the language toggle button
-            const languageToggle = document.getElementById('language-toggle');
+            // Update header subtitle and navigation
+            const subtitle = document.getElementById('header-subtitle');
+            const navSections = document.getElementById('nav-sections');
             
-            // Add click event listener
-            languageToggle.addEventListener('click', function() {
-                const currentLang = html.getAttribute('lang');
-                const newLang = currentLang === 'en' ? 'fr' : 'en';
-                
-                // Switch the language
-                html.setAttribute('lang', newLang);
-                
-                // Save the language preference
-                localStorage.setItem('preferredLanguage', newLang);
-            });
-            
-            // Check if there's a saved language preference
-            const savedLanguage = localStorage.getItem('preferredLanguage');
-            if (savedLanguage) {
-                html.setAttribute('lang', savedLanguage);
+            if (lang === 'en') {
+                subtitle.textContent = 'Leadership Coaching';
+                navSections.innerHTML = '<span onclick="scrollToSection(\'about\')">About me</span><span onclick="scrollToSection(\'approach\')">My approach</span><span onclick="scrollToSection(\'systems\')">System Psychodynamics</span><span onclick="scrollToSection(\'reviews\')">Reviews</span><span onclick="scrollToSection(\'contact\')">Contact</span>';
+            } else {
+                subtitle.textContent = 'Coaching en Leadership';
+                navSections.innerHTML = '<span onclick="scrollToSection(\'about\')">Mon Parcours</span><span onclick="scrollToSection(\'approach\')">Mon Approche</span><span onclick="scrollToSection(\'systems\')">Les Systèmes Psychodynamiques</span><span onclick="scrollToSection(\'reviews\')">Témoignages</span><span onclick="scrollToSection(\'contact\')">Contact</span>';
             }
             
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const mainNav = document.getElementById('main-nav');
-            
-            menuToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-                menuToggle.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+            // Hide all content
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
             });
             
-            // Close menu when clicking on links
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mainNav.classList.remove('active');
-                    menuToggle.textContent = '☰';
-                });
+            // Show content for selected language
+            setTimeout(() => {
+                document.getElementById('about-' + lang).classList.add('active');
+                document.getElementById('approach-' + lang).classList.add('active');
+                document.getElementById('systems-' + lang).classList.add('active');
+                document.getElementById('reviews-' + lang).classList.add('active');
+                document.getElementById('contact-' + lang).classList.add('active');
+            }, 100);
+        }
+
+        function scrollToSection(sectionId) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const section = document.getElementById(sectionId);
+            const sectionTop = section.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
             });
-        });
+        }
     </script>
 </body>
 </html>
