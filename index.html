@@ -74,68 +74,6 @@
             transform: translateY(-2px);
         }
 
-        /* Reviews Section */
-        .review-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-left: 4px solid #1565c0;
-            transition: transform 0.3s ease;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .review-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-        }
-
-        .review-author {
-            text-align: right;
-            color: #1565c0;
-            font-weight: 600;
-        }
-
-        .review-position {
-            text-align: right;
-            color: #7b8a96;
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-        }
-
-        /* Photo container */
-        .photo-container {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border: 4px solid white;
-            box-shadow: 0 8px 32px rgba(21, 101, 192, 0.2);
-            margin: 0 auto 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1565c0;
-            font-size: 1.1rem;
-            text-align: center;
-            font-style: italic;
-            overflow: hidden;
-        }
-
-        .photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
         /* Language Toggle */
         .language-toggle {
             position: fixed;
@@ -198,7 +136,7 @@
         .content p {
             margin-bottom: 1.2rem;
             font-size: 1.1rem;
-            text-align: justify;
+            text-align: left;
             color: #34495e;
         }
 
@@ -221,6 +159,69 @@
         .content em {
             color: #2980b9;
             font-style: italic;
+        }
+
+        /* Photo container */
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 4px solid white;
+            box-shadow: 0 8px 32px rgba(21, 101, 192, 0.2);
+            margin: 0 auto 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1565c0;
+            font-size: 1.1rem;
+            text-align: center;
+            font-style: italic;
+            overflow: hidden;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Reviews Section */
+        .review-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-left: 4px solid #1565c0;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: left;
+        }
+
+        .review-author {
+            text-align: right;
+            color: #1565c0;
+            font-weight: 600;
+        }
+
+        .review-position {
+            text-align: right;
+            color: #7b8a96;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
         }
 
         /* Link styling */
@@ -270,6 +271,10 @@
                 height: 150px;
                 margin-bottom: 1.5rem;
             }
+
+            .review-card {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -282,6 +287,14 @@
             .nav-sections span {
                 font-size: 0.85rem;
                 padding: 0.3rem 0.6rem;
+            }
+
+            .section {
+                padding: 1.5rem 1rem;
+            }
+
+            .container {
+                padding: 0 15px;
             }
         }
 
@@ -325,35 +338,25 @@
                 <div class="content active" id="about-en">
                     <h2>About me</h2>
                     <div class="photo-container">
-                        <img src="IMG_4099.JPEG" alt="Joseph" />
-                        <!-- Pour ajouter une photo, remplacez le div ci-dessus par :
-                        <img src="chemin/vers/votre/photo.jpg" alt="Joseph" />
-                        -->
+                        <img src="IMG_4099.JPG" alt="Joseph" />
                     </div>
-                    <p>I have been living in Asia for the past ten years, managing remotely a small trading office. My work connects me with teams in China, Brazil, and France, across the many facets of international trade --- sales, logistics, quality control, and team management.</p>
+                    <p>I have been living in Asia for the past ten years, managing, in a hybrid setup, a small trading office. My work connects me with teams in China, Brazil, and France, across the many facets of international trade.</p>
                     
-                    <p>Over time, I came to see that performance is not just a matter of skills or strategy. It emerges from the subtle alignment between a person and the larger system they operate in, and from their ability to work effectively within a group. This led me to reflect more deeply on power, authority, and dependency, on group dynamics, and on the defense mechanisms individuals and teams develop to cope with the anxiety of a volatile and complex environment.</p>
+                    <p>Over time, I came to see that personal fulfillment and performance are not just a matter of skills or strategy. It emerges from the subtle alignment between a person and the larger system they operate in, and from their ability to work effectively within a group. This led me to reflect on the notions of power, authority, and dependency, on group dynamics, and on the defense mechanisms individuals and teams develop to cope with the anxiety of a volatile and complex environment.</p>
                     
-                    <p>These observations inspired me to train in <em>Coaching for Leadership</em> at the Tavistock Institute of Human Relations. I have reached a stage in life where the search for meaning has become more important --- a stage where one wants to have an impact and contribute to a better world. For me, this begins with a strong personal grounding and the capacity to live with uncertainty and the unknown.</p>
-                    
-                    <p>Coaching offers me a way to explore this human complexity --- through listening, dialogue, and shared experience --- and to provide leaders with a space to pause, make sense of what is unfolding around them, and reconnect with what matters most, both in themselves and in their work.</p>
+                    <p>These observations inspired me to start my journey as a coach. Coaching offers a way to explore the human complexity --- through listening, dialogue, and shared experience --- and providing leaders with a space to pause, making sense of what is unfolding around them, and reconnect with what matters most, both in themselves and in their work.</p>
                 </div>
 
                 <div class="content" id="about-fr">
                     <h2>Mon Parcours</h2>
                     <div class="photo-container">
-                        <div>Votre photo ici</div>
-                        <!-- Pour ajouter une photo, remplacez le div ci-dessus par :
-                        <img src="chemin/vers/votre/photo.jpg" alt="Joseph" />
-                        -->
+                        <img src="IMG_4099.JPG" alt="Joseph" />
                     </div>
-                    <p>Je vis en Asie depuis dix ans, où je dirige à distance un petit bureau de trading. Mon travail me met en relation avec des équipes en Chine, au Brésil et en France, autour des multiples enjeux du commerce international --- vente, logistique, contrôle qualité, gestion d'équipe, etc.</p>
+                    <p>Je vis en Asie depuis dix ans, où je dirige à distance un petit bureau de trading. Mon travail me met en relation avec des équipes en Chine, au Brésil et en France, autour des multiples enjeux du commerce international.</p>
                     
-                    <p>Avec le temps, j'ai compris que la performance ne tient pas seulement aux compétences ou à la stratégie. Elle résulte d'un alignement subtil entre la personne et le système dans lequel elle évolue, ainsi que de sa capacité à interagir efficacement en groupe. Cela m'a amené à réfléchir plus profondément aux relations de pouvoir, d'autorité et de dépendance, aux dynamiques de groupe, et aux mécanismes de défense qu'un individu ou une équipe déploient pour faire face à l'anxiété d'un environnement instable et complexe.</p>
+                    <p>Avec le temps, j'ai compris que la performance et l'épanouissement personnel ne tiennent pas seulement aux compétences ou à la stratégie. Ils résultent d'un alignement subtil entre la personne et le système dans lequel elle évolue, ainsi que de sa capacité à interagir efficacement en groupe. Cela m'a amené à réfléchir aux relations de pouvoir, d'autorité et de dépendance, ainsi qu'aux dynamiques de groupe, et aux mécanismes de défense qu'un individu ou une équipe déploient pour faire face à l'anxiété d'un environnement instable et complexe.</p>
                     
-                    <p>Ces observations m'ont conduit à me former en <em>Coaching for Leadership</em> au Tavistock Institute of Human Relations. Aujourd'hui, à ce stade de ma carrière, la recherche de sens prend une place plus importante --- je souhaite avoir de l'impact et contribuer à un monde meilleur. Pour moi, cela commence par un ancrage personnel solide et la capacité à vivre avec l'incertitude et l'inconnu.</p>
-                    
-                    <p>Le coaching est pour moi un moyen d'explorer cette complexité humaine --- par l'écoute, le dialogue et l'expérience partagée --- et d'offrir aux leaders un espace où faire une pause, donner du sens à ce qui se passe autour d'eux, et se reconnecter à ce qui compte vraiment, en eux-mêmes comme dans leur travail.</p>
+                    <p>Ces observations sont à l'origine de mon travail en tant que coach. Le coaching est pour moi un moyen d'explorer cette complexité humaine, à travers l'écoute, le dialogue et l'expérience partagée, et d'offrir aux leaders un espace où faire une pause, prendre le temps de réfléchir à ce qu'il se passe autour d'eux, et se reconnecter à ce qui compte vraiment dans leur travail.</p>
                 </div>
             </section>
 
@@ -367,7 +370,7 @@
                     
                     <p>It is also not mentoring. I do not provide ready-made solutions or advice. Instead, my role is to help the clients arrive at their own solutions. To do so, I help them explore both the visible and invisible forces shaping their leadership, enabling them to navigate uncertainty, clarify their role, and act with greater purpose and effectiveness.</p>
                     
-                    <p>Grounded in the systemic--psychodynamic tradition of the Tavistock Institute, my coaching offers a space for deep reflection and strategic thinking.</p>
+                    <p>Grounded in the systemic--psychodynamic tradition, my coaching offers a space for deep reflection and strategic thinking.</p>
                 </div>
 
                 <div class="content" id="approach-fr">
@@ -378,7 +381,7 @@
                     
                     <p>Ce n'est pas non plus du mentoring : je n'apporte pas de solutions toutes faites ni de conseils. Mon rôle est d'aider le client à trouver ses propres réponses. Pour cela, je l'accompagne dans l'exploration des forces visibles et invisibles qui façonnent son leadership, afin de lui permettre de naviguer dans l'incertitude, de clarifier son rôle et d'agir avec plus de sens et d'efficacité.</p>
                     
-                    <p>Ancré dans la tradition systémique--psychodynamique du Tavistock Institute, mon coaching offre un espace de réflexion approfondie et de pensée stratégique.</p>
+                    <p>Ancré dans la tradition systèmes psychodynamiques, mon coaching offre un espace de réflexion approfondie et de pensée stratégique.</p>
                 </div>
             </section>
 
@@ -386,34 +389,34 @@
             <section class="section" id="systems">
                 <div class="content active" id="systems-en">
                     <h2>About System Psychodynamics</h2>
-                    <p>The systems psychodynamics approach was developed in the 1950s--60s by researchers and practitioners at the Tavistock Institute <a href="https://tavinstitute.org/">(and the Tavistock Clinic)</a> in London.</p>
+                    <p>The systems psychodynamics approach was developed in the 1950s--60s by researchers and practitioners at the Tavistock Institute for Human Relations <a href="https://tavinstitute.org/">(https://tavinstitute.org/)</a> in London.</p>
                     
                     <p>It emerged at the crossroads of several influences:</p>
                     
                     <ul>
-                        <li><strong>Freudian and post-Freudian psychoanalysis</strong> to understand the unconscious dynamics at both individual and collective levels.</li>
-                        <li><strong>Systems and organizational theory</strong> to analyze how groups and institutions operate within their environment.</li>
-                        <li><strong>Group relations work</strong> to study the relationship between role, authority, and system.</li>
+                        <li><strong>Freudian and post-Freudian psychoanalysis</strong> to understand the unconscious dynamics and defense mechanisms.</li>
+                        <li><strong>System theory</strong> to analyze roles and how organizations and institutions operate within their environment.</li>
+                        <li><strong>Group relations</strong> to experience group dynamics, authority, and dependency, leadership and followership, and the group as a whole.</li>
                     </ul>
                     
-                    <p><strong>Context and purpose:</strong> initially, it was designed to help organizations (businesses, hospitals, the military, public services) better understand the tensions, resistances, and collective behaviors that either hinder or support their functioning --- with the aim of developing leadership, clarifying roles, and improving effectiveness, while taking the human and emotional dimension into account.</p>
+                    <p>Initially, it was designed to help organizations better understand the tensions, resistances, and collective behaviors that either hinder or support their functioning --- with the aim of developing leadership, clarifying roles, and improving effectiveness, while taking the human and emotional dimension into account.</p>
                     
                     <p>Today, the Tavistock Institute continues to develop this approach, adapting it to contemporary contexts and integrating new perspectives to address current social, organizational, and cultural challenges.</p>
                 </div>
 
                 <div class="content" id="systems-fr">
                     <h2>Les Systèmes Psychodynamiques</h2>
-                    <p>L'approche systems psychodynamiques a été développée dans les années 1950--60 par des chercheurs et praticiens du Tavistock Institute (et de la Tavistock Clinic) à Londres.</p>
+                    <p>L'approche systèmes psychodynamiques a été développée dans les années 1950--60 par des chercheurs et praticiens du Tavistock Institute <a href="https://tavinstitute.org/">(https://tavinstitute.org/)</a> à Londres.</p>
                     
-                    <p>Elle s'est construite à la croisée de plusieurs influences :</p>
+                    <p>Elle s'est construite à la croisée de plusieurs disciplines :</p>
                     
                     <ul>
-                        <li><strong>Psychanalyse freudienne et post-freudienne</strong> pour comprendre les dynamiques inconscientes individuelles et collectives.</li>
-                        <li><strong>Théorie des systèmes et de l'organisation</strong> pour analyser comment les groupes et institutions fonctionnent dans leur environnement.</li>
-                        <li><strong>Travail sur les groupes</strong> pour étudier le lien entre rôle, autorité et système.</li>
+                        <li><strong>La psychanalyse freudienne et postfreudienne</strong> pour comprendre les dynamiques inconscientes et les mécanismes de défenses.</li>
+                        <li><strong>La théorie des systèmes ouverts,</strong> qui permet à travers l'analyse d'une organisation dans son environnement de mieux comprendre le rôle de chacun.</li>
+                        <li><strong>Les relations de groupes,</strong> conférences qui permettent de faire l'expérience des dynamiques de groupes, de l'autorité, de la dépendance, du leadership et du followership, et du groupe comme un tout.</li>
                     </ul>
                     
-                    <p><strong>Contexte et but</strong> : initialement, il s'agissait d'aider les organisations (entreprises, hôpitaux, armée, services publics) à mieux comprendre les tensions, résistances et comportements collectifs qui freinent ou favorisent leur fonctionnement, afin de développer le leadership, clarifier les rôles et améliorer l'efficacité tout en prenant en compte la dimension humaine et émotionnelle.</p>
+                    <p>Initialement, il s'agissait d'aider les organisations à mieux comprendre les tensions, résistances et comportements collectifs qui freinent ou favorisent leur fonctionnement, afin de développer le leadership, clarifier les rôles et améliorer l'efficacité tout en prenant en compte la dimension humaine et émotionnelle.</p>
                     
                     <p>Aujourd'hui, le Tavistock Institute continue de faire évoluer cette approche, l'adaptant aux contextes contemporains et intégrant des perspectives nouvelles pour répondre aux enjeux sociaux, organisationnels et culturels actuels.</p>
                 </div>
@@ -426,26 +429,18 @@
                     
                     <div class="review-card">
                         <div class="review-text">
-                            "Working with Joseph has been transformational for my leadership approach. His deep understanding of systems dynamics helped me navigate complex organizational challenges with greater clarity and confidence. The coaching sessions provided a space for profound reflection that I hadn't experienced before."
+                            "It was truly a pleasure and a unique opportunity to be guided by you on my personal development journey. Over just three sessions, I was able to explore areas of vulnerability, process emotions, and reflect deeply on my values — and I'm glad how you made it all smooth to talk about. What stands out about you is your innate ability to ask the right questions and guide me in articulating my thoughts more clearly. Your encouragement to reflect on my core values turned out to be a powerful exercise in understanding what truly matters to me and how I show up in different areas of my life — whether at work, with family, or personally. Through our conversations, I've now begun to develop a routine of self-reflection that continues to benefit me beyond the sessions. You are a thoughtful and empathetic leader, and I truly valued the chance to discuss my life with you."
                         </div>
-                        <div class="review-author">Sarah Chen</div>
-                        <div class="review-position">Regional Director, Tech Company</div>
+                        <div class="review-author">Enoch</div>
+                        <div class="review-position">Engineer</div>
                     </div>
 
                     <div class="review-card">
                         <div class="review-text">
-                            "Joseph's systemic-psychodynamic approach offered me insights into the invisible forces shaping my leadership that I never would have discovered on my own. His ability to listen deeply and ask the right questions helped me reconnect with my authentic leadership style."
+                            "At the beginning of the coaching journey, I perceived myself as a ball of softly organized thread, but sometimes too rigid. Today, this ball has partly unraveled: the thread is freer, without losing the central core but with a lighter weight. This journey has offered me precious insights: reflecting on my role between operational actress and strategic leader, creating a space for personal reflection on my needs and well-being, and appreciating the structured method of feedback that allows recognizing progress and valuing the path traveled."
                         </div>
-                        <div class="review-author">Michael Rodriguez</div>
-                        <div class="review-position">VP Operations, Manufacturing</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-text">
-                            "The coaching relationship with Joseph provided exactly what I needed during a period of significant organizational change. His expertise in group dynamics and authority relationships helped me navigate uncertainty and emerge as a more effective leader."
-                        </div>
-                        <div class="review-author">Emma Thompson</div>
-                        <div class="review-position">Department Head, Healthcare</div>
+                        <div class="review-author">Dr. Teresa S.</div>
+                        <div class="review-position">Head of Service, Healthcare</div>
                     </div>
                 </div>
 
@@ -454,26 +449,18 @@
                     
                     <div class="review-card">
                         <div class="review-text">
-                            "Travailler avec Joseph a été transformateur pour mon approche du leadership. Sa compréhension profonde des dynamiques systémiques m'a aidé à naviguer dans des défis organisationnels complexes avec plus de clarté et de confiance. Les séances de coaching ont offert un espace de réflexion profonde que je n'avais jamais expérimenté auparavant."
+                            "C'était vraiment un plaisir et une opportunité unique d'être guidé par vous dans mon parcours de développement personnel. En seulement trois séances, j'ai pu explorer des domaines de vulnérabilité, traiter des émotions et réfléchir profondément à mes valeurs — et je suis content de la façon dont vous avez rendu tout cela facile à aborder. Ce qui vous distingue, c'est votre capacité innée à poser les bonnes questions et à m'aider à articuler mes pensées plus clairement. Votre encouragement à réfléchir sur mes valeurs fondamentales s'est révélé être un exercice puissant pour comprendre ce qui compte vraiment pour moi et comment je me présente dans différents domaines de ma vie — que ce soit au travail, en famille ou personnellement. Grâce à nos conversations, j'ai maintenant commencé à développer une routine d'auto-réflexion qui continue de me profiter au-delà des séances. Vous êtes un leader réfléchi et empathique, et j'ai vraiment apprécié l'opportunité de discuter de ma vie avec vous."
                         </div>
-                        <div class="review-author">Sarah Chen</div>
-                        <div class="review-position">Directrice Régionale, Entreprise Tech</div>
+                        <div class="review-author">Enoch</div>
+                        <div class="review-position">Ingénieur</div>
                     </div>
 
                     <div class="review-card">
                         <div class="review-text">
-                            "L'approche systémique-psychodynamique de Joseph m'a offert des insights sur les forces invisibles qui façonnent mon leadership que je n'aurais jamais découvertes seul. Sa capacité d'écoute profonde et de poser les bonnes questions m'a aidé à me reconnecter avec mon style de leadership authentique."
+                            "Au début du parcours de coaching, je me percevais comme une pelote de fil souplement organisée, mais parfois trop rigide. Aujourd'hui, cette pelote s'est en partie déroulée : le fil est plus libre, sans perdre le noyau central mais avec un poids plus léger. Ce parcours m'a offert des pistes précieuses : réfléchir sur mon rôle entre actrice opérationnelle et leader stratégique, créer un espace de réflexion personnelle sur mes besoins et mon bien-être, et apprécier la méthode structurée du feedback qui permet de reconnaître les progrès et de valoriser le chemin parcouru."
                         </div>
-                        <div class="review-author">Michael Rodriguez</div>
-                        <div class="review-position">VP Opérations, Industrie</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-text">
-                            "La relation de coaching avec Joseph a fourni exactement ce dont j'avais besoin pendant une période de changements organisationnels significatifs. Son expertise en dynamiques de groupe et relations d'autorité m'a aidé à naviguer l'incertitude et à émerger comme un leader plus efficace."
-                        </div>
-                        <div class="review-author">Emma Thompson</div>
-                        <div class="review-position">Chef de Département, Santé</div>
+                        <div class="review-author">Dr. Teresa S.</div>
+                        <div class="review-position">Cheffe de Service, Santé</div>
                     </div>
                 </div>
             </section>
@@ -488,7 +475,7 @@
                             <p>I would be happy to discuss how coaching might support your leadership journey. Please feel free to reach out for an initial conversation.</p>
                             <div style="margin-top: 2rem;">
                                 <div style="margin-bottom: 1rem;">
-                                    <strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+                                    <strong>Email:</strong> <a href="mailto:josephcohen.coaching@gmail.com">josephcohen.coaching@gmail.com</a>
                                 </div>
                                 <div style="margin-bottom: 1rem;">
                                     <strong>Location:</strong> Asia
@@ -509,7 +496,7 @@
                             <p>Je serais ravi de discuter de la façon dont le coaching pourrait accompagner votre parcours de leader. N'hésitez pas à me contacter pour un premier échange.</p>
                             <div style="margin-top: 2rem;">
                                 <div style="margin-bottom: 1rem;">
-                                    <strong>Email :</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+                                    <strong>Email :</strong> <a href="mailto:josephcohen.coaching@gmail.com">josephcohen.coaching@gmail.com</a>
                                 </div>
                                 <div style="margin-bottom: 1rem;">
                                     <strong>Localisation :</strong> Asie
