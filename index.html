@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,8 +239,18 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 1rem 0 0.8rem 0;
+            }
+
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 1rem;
             }
 
             .section {
@@ -254,16 +265,22 @@
             .language-toggle {
                 top: 10px;
                 right: 10px;
+                padding: 3px;
+            }
+
+            .lang-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
 
             .nav-sections {
-                gap: 1rem;
-                margin-top: 1.5rem;
+                gap: 0.8rem;
+                padding: 0 1rem;
             }
 
             .nav-sections span {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
             }
 
             .photo-container {
@@ -278,23 +295,48 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 0.8rem 0 0.6rem 0;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+            }
+
             .nav-sections {
-                flex-direction: column;
                 gap: 0.5rem;
-                margin-top: 1rem;
+                padding: 0 0.5rem;
             }
 
             .nav-sections span {
-                font-size: 0.85rem;
-                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+                padding: 0.25rem 0.5rem;
+                border-radius: 12px;
             }
 
             .section {
                 padding: 1.5rem 1rem;
+                margin: 0.8rem 0;
             }
 
             .container {
                 padding: 0 15px;
+            }
+
+            .language-toggle {
+                top: 8px;
+                right: 8px;
+                padding: 2px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
             }
         }
 
